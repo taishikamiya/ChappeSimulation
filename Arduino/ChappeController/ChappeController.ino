@@ -1,3 +1,9 @@
+// Chappe Controller
+// 2017.03.11 degree correction
+// center: 0->7 ,90->93
+// left: 90->83
+// right: 90->85
+
 #include <VarSpeedServo.h> // external lib
 //#include <Servo.h>
 
@@ -65,9 +71,9 @@ void setup() {
   myServoLeft.attach(10);
   myServoRight.attach(11);  
 
-  myServoLeft.write(90,150,true);  
-  myServoRight.write(90,150,true);  
-  myServoCenter.write(0,150,true);  
+  myServoLeft.write(83,150,true);  
+  myServoRight.write(85,150,true);  
+  myServoCenter.write(7,150,true);  
 
 // initial setting
   angleWrite('c');
@@ -224,7 +230,7 @@ char readPot(int val){  // val=0-1024
 
 void angleWrite(char c){
   if(c=='a' || c=='A'){
-    angleCenter=0;
+    angleCenter=7;
     angleLeft=0;
     angleRight=180;
   }
@@ -234,7 +240,7 @@ void angleWrite(char c){
     angleRight=180;
   }
   if(c=='c' || c=='C'){
-    angleCenter=90;
+    angleCenter=93;
     angleLeft=0;
     angleRight=180;
   }
@@ -254,7 +260,7 @@ void angleWrite(char c){
     angleRight=0;
   }
   if(c=='g' || c=='G'){
-    angleCenter=90;
+    angleCenter=93;
     angleLeft=180;
     angleRight=0;
   }
@@ -264,7 +270,7 @@ void angleWrite(char c){
     angleRight=0;
   }
   if(c=='i' || c=='I'){
-    angleCenter=0;
+    angleCenter=7;
     angleLeft=180;
     angleRight=180;
   }
@@ -279,7 +285,7 @@ void angleWrite(char c){
     angleRight=180;
   }
   if(c=='l' || c=='L'){
-    angleCenter=90;
+    angleCenter=93;
     angleLeft=180;
     angleRight=180;
   }
@@ -289,7 +295,7 @@ void angleWrite(char c){
     angleRight=180;
   }
   if(c=='n' || c=='N'){
-    angleCenter=0;
+    angleCenter=7;
     angleLeft=0;
     angleRight=0;
   }
@@ -299,7 +305,7 @@ void angleWrite(char c){
     angleRight=0;
   }
  if(c=='p' || c=='P'){
-    angleCenter=90;
+    angleCenter=93;
     angleLeft=0;
     angleRight=0;
   }
@@ -309,49 +315,52 @@ void angleWrite(char c){
     angleRight=0;
   }
  if(c=='r' || c=='R'){
-    angleCenter=0;
+    angleCenter=7;
     angleLeft=0;
-    angleRight=90;
+    angleRight=85;
   }
  if(c=='s' || c=='S'){
     angleCenter=45;
     angleLeft=0;
-    angleRight=90;
+    angleRight=85;
   }
  if(c=='t' || c=='T'){
-    angleCenter=90;
+    angleCenter=93;
     angleLeft=0;
-    angleRight=90;
+    angleRight=85;
   }
  if(c=='u' || c=='U'){
     angleCenter=135;
     angleLeft=0;
-    angleRight=90;
+    angleRight=85;
   }
  if(c=='v' || c=='V'){
-    angleCenter=0;
-    angleLeft=90;
+    angleCenter=7;
+    angleLeft=83;
     angleRight=0;
   }
  if(c=='w' || c=='W'){
     angleCenter=45;
-    angleLeft=90;
+    angleLeft=83;
     angleRight=0;
   }
  if(c=='x' || c=='X'){
-    angleCenter=90;
-    angleLeft=90;
+    angleCenter=93;
+    angleLeft=83;
     angleRight=0;
   }
  if(c=='y' || c=='Y'){
     angleCenter=135;
-    angleLeft=90;
+    angleLeft=83;
     angleRight=0;
   }
  if(c=='z' || c=='Z'){
-    angleCenter=0;
-    angleLeft=90;
-    angleRight=180;
+    angleCenter=7;
+    angleLeft=83;
+    angleRight=85;
+//    angleCenter=7;
+//    angleLeft=83;
+//    angleRight=180;
   }
 
   
